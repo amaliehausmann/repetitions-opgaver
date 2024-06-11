@@ -1,0 +1,42 @@
+.hidden {
+  opacity: 0;
+}
+
+.background{
+  background-color: blue;
+}
+
+#msg{
+  display: none;
+}
+
+.elementLek2{
+  height: 50px;
+  width: 50px;
+}
+
+.mainContainer {
+  div {
+    border: solid 2px rgb(77, 77, 77);
+    padding: 8px;
+    margin: 16px;
+  }
+  span {
+    display: block;
+    margin: 16px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 2.4rem;
+  }
+}
+
+body {
+  font-family: monospace;
+  max-width: 968px;
+  background-color: rgb(45, 45, 45);
+  color: white;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
