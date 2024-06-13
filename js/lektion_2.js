@@ -140,6 +140,27 @@ function addElementWithText(appendElementId, inputOneId, inputTwoId, inputThreeI
     
 }
 
+// Opgave 8
+const navneordArray = ['fyrværkeri', 'hund', 'kat', 'skildpadde', 'fugl', 'sko', 'jakke', 'hår', 'taske'];
+const tillægsordArray = ['sød', 'dum', 'grim', 'flot', 'smuk', 'klog', 'irriterende', 'sjov', 'sej'];
+const udsagnsordArray = ['snakker', 'danser', 'synger', 'fløjter', 'skøjter', 'løber', 'går', 'råber']
+
+function getRandomWord(wordsArray){
+    const randomIndex = Math.floor(Math.random() * wordsArray.length) 
+    return wordsArray[randomIndex];
+}
+
+function generateSentence(navneord, tillægsord, udsagnsord, buttonId, appendElementId){
+    const button = document.getElementById(buttonId);
+    const appendElement = document.getElementById(appendElementId);
+
+    button.addEventListener('click', function() {
+        const sentence = document.createElement('p');
+        sentence.innerText = `${getRandomWord(navneord)} ${getRandomWord(tillægsord)} ${getRandomWord(udsagnsord)}`
+        appendElement.appendChild(sentence);
+    })
+}
+
 
 
 
@@ -156,3 +177,5 @@ coloredElement('colorGenerator');
 decideColor('colorInput', 'decideColorButton', 'L2_6')
 
 addElementWithText('L2_7', 'elementInput', 'textInput', 'colorAdd', 'coloredElement')
+
+generateSentence(navneordArray, tillægsordArray, udsagnsordArray, 'sentenceGenerate', 'L2_8')
