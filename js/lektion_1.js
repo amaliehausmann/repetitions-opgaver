@@ -4,6 +4,7 @@ let L1_3 = document.querySelector("#L1_3");
 let L1_4 = document.querySelector("#L1_4");
 let L1_5 = document.querySelector("#L1_5");
 let L1_6 = document.querySelector("#L1_6");
+let L1_7 = document.querySelector("#L1_7");
 
 // buttons
 let toggleOne = document.getElementById('toggle1');
@@ -73,6 +74,25 @@ function removeVowels(lettersToRemove, inputId, displayId){
   })
 }
 
+// Opgave 7
+function addElementWithText(appendElementId, inputOneId, inputTwoId, buttonId) {
+  const inputValueOne = document.getElementById(inputOneId);
+  const inputValueTwo = document.getElementById(inputTwoId);
+  const button = document.getElementById(buttonId);
+
+  button.addEventListener('click', function() {
+    const createNewElement = document.createElement(`${inputValueOne.value}`);
+    createNewElement.innerText = `${inputValueTwo.value}`;
+    appendElementId.appendChild(createNewElement);
+  });
+}
+
+
+function addElementWithoutText(appendElement, newElement){
+  const addNewElement = document.createElement(newElement);
+  appendElement.appendChild(addNewElement);
+}
+
 
 // Function Calls
 fullName("Amalie", "Hausmann");
@@ -90,4 +110,5 @@ clickCounter('counts', 'clickCounter');
 wordLengthDisplay('word', 'displayLength');
 
 removeVowels('aeiouyæøå', 'vowels', 'resultDisplay');
+addElementWithText(L1_7, 'elementAdder', 'textadder', 'add');
 

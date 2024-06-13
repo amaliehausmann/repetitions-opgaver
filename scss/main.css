@@ -2,6 +2,10 @@
   opacity: 0;
 }
 
+#colorInput {
+  width: 350px;
+}
+
 .background {
   background-color: blue;
 }
